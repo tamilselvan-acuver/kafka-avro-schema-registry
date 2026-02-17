@@ -35,8 +35,8 @@ It focuses on schema-based message serialization to ensure compatibility between
 
 ## How to Run
 
-### Start Kafka & Schema Registry
-```bash
+ Start Kafka & Schema Registry
+
 docker-compose up -d
 Run Producer
 cd avro-producer
@@ -44,7 +44,10 @@ mvn spring-boot:run
 Run Consumer
 cd avro-consumer
 mvn spring-boot:run
-APIs
+---
+
+
+### APIs
 Producer API
 Publishes an order event to Kafka.
 
@@ -55,7 +58,8 @@ Returns the last consumed order event.
 GET /last-order
 Kafka Topic
 order.created
-Notes
+
+### Notes
 Avro provides compact and fast binary serialization
 
 Schema Registry prevents schema incompatibility issues
