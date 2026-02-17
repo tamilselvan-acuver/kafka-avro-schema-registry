@@ -26,18 +26,34 @@ mvn spring-boot:run
 Run Consumer
 cd avro-consumer
 mvn spring-boot:run
+---
+
+Run Producer
+cd avro-producer
+mvn spring-boot:run
+
+Run Consumer
+cd avro-consumer
+mvn spring-boot:run
+
 APIs
 Producer API
+
 Publishes an order event to Kafka.
 
 GET http://localhost:8080/send
+
 Consumer API
+
 Returns the last consumed order event.
 
 GET http://localhost:8082/last-order
+
 Kafka Topic
 order.created
+
 Notes
+
 Avro is used for message serialization
 
 Schema Registry ensures producer–consumer compatibility
