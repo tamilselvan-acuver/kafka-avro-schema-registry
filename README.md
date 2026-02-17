@@ -35,11 +35,11 @@ It focuses on schema-based message serialization to ensure compatibility between
 
 
 ### APIs
-- Producer API
+## Producer API
 - Publishes an order event to Kafka.
 - GET /send
 
-- Consumer API
+## Consumer API
 -  Returns the last consumed order event.
 -  GET /last-order
 
