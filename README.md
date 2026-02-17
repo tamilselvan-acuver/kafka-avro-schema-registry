@@ -46,11 +46,11 @@ It focuses on schema-based message serialization to ensure compatibility between
 ---
 
 ### Kafka Topic
-order.created
+ - order.created
 
 ### Notes
-Avro provides compact and fast binary serialization
+- Avro provides compact and fast binary serialization
 
-Schema Registry prevents schema incompatibility issues
+- Schema Registry prevents schema incompatibility issues
 
-Strong typing improves reliability in distributed systems
+- Strong typing improves reliability in distributed systems
