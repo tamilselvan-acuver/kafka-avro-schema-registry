@@ -1,78 +1,71 @@
-Kafka Avro Schema Registry
+# Kafka Avro Schema Registry
 
-This project demonstrates a Kafka Producer and Consumer implementation using Apache Avro and Confluent Schema Registry with Spring Boot.
+This project demonstrates a **Kafka Producer and Consumer** implementation using **Apache Avro** and **Confluent Schema Registry** with **Spring Boot**.
 
-It shows how schema-based serialization helps maintain data consistency in distributed systems.
+It focuses on schema-based message serialization to ensure data consistency between Kafka producers and consumers.
 
-Tech Stack
+---
 
-Java 21
+## Tech Stack
 
-Spring Boot
+- Java 21
+- Spring Boot
+- Apache Kafka
+- Apache Avro
+- Confluent Schema Registry
+- Docker & Docker Compose
+- Maven
 
-Apache Kafka
+---
 
-Apache Avro
+## Project Structure
 
-Confluent Schema Registry
-
-Docker & Docker Compose
-
-Maven
-
-Project Structure
 kafka-avro-schema-registry
 │
-├── avro-producer        # Kafka producer service
-├── avro-consumer        # Kafka consumer service
-├── docker-compose.yml  # Kafka, Zookeeper, Schema Registry setup
+├── avro-producer # Kafka producer application
+├── avro-consumer # Kafka consumer application
+├── docker-compose.yml # Kafka, Zookeeper, Schema Registry setup
 └── README.md
 
-Avro & Schema Registry (Task Overview)
 
-Learned Apache Avro and its importance in distributed systems
+---
 
-Set up Confluent Schema Registry using Docker
+## Avro & Schema Registry
 
-Created Avro schema for OrderCreatedEvent
+- Defined Avro schema for `OrderCreatedEvent`
+- Generated Java classes using Avro Maven plugin
+- Used Confluent Avro serializers for Kafka messaging
+- Managed schemas centrally using Schema Registry
 
-Generated Java classes using Avro Maven plugin
+---
 
-Produced and consumed Avro messages using Confluent serializers
+## How to Run
 
-How to Run the Project
-1. Start Kafka and Schema Registry
+### 1. Start Kafka & Schema Registry
+
+```bash
 docker-compose up -d
-
-2. Run Producer Application
+2. Run Producer
 cd avro-producer
 mvn spring-boot:run
-
-3. Run Consumer Application
+3. Run Consumer
 cd avro-consumer
 mvn spring-boot:run
-
 APIs
 Producer API
-
 Publishes an order event to Kafka.
 
 GET http://localhost:8080/send
-
 Consumer API
-
-Fetches the last consumed order event.
+Returns the last consumed order event.
 
 GET http://localhost:8082/last-order
-
 Kafka Topic
-
 order.created
 
 Notes
+Avro is used for message serialization
 
-Messages are serialized using Avro
+Schema Registry ensures producer–consumer compatibility
 
-Schemas are managed centrally using Schema Registry
-
-Consumer uses KafkaAvroDeserializer with specific.avro.reader=true
+Consumer uses specific.avro.reader=true
