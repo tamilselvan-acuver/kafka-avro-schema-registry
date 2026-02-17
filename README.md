@@ -1,30 +1,29 @@
 # Kafka Avro Schema Registry
 
-This project demonstrates a **Kafka Producer and Consumer** implementation using **Apache Avro** and **Confluent Schema Registry** with **Spring Boot**.
+This project demonstrates a Kafka Producer and Consumer using Apache Avro and Confluent Schema Registry with Spring Boot.
 
-It focuses on schema-based message serialization to ensure data consistency between Kafka producers and consumers.
+It focuses on schema-based message serialization to maintain compatibility between producers and consumers.
 
 ---
 
 ## Avro & Schema Registry
 
-- Defined Avro schema for `OrderCreatedEvent`
-- Generated Java classes using Avro Maven plugin
-- Used Confluent Avro serializers for Kafka messaging
-- Managed schemas centrally using Schema Registry
+- Avro schema defined for `OrderCreatedEvent`
+- Java classes generated using Avro Maven plugin
+- Confluent Avro serializers used for Kafka messaging
+- Schema Registry used for centralized schema management
 
 ---
 
 ## How to Run
 
-### 1. Start Kafka & Schema Registry
-
+### Start Kafka & Schema Registry
 ```bash
 docker-compose up -d
-2. Run Producer
+Run Producer
 cd avro-producer
 mvn spring-boot:run
-3. Run Consumer
+Run Consumer
 cd avro-consumer
 mvn spring-boot:run
 APIs
@@ -38,10 +37,9 @@ Returns the last consumed order event.
 GET http://localhost:8082/last-order
 Kafka Topic
 order.created
-
 Notes
 Avro is used for message serialization
 
 Schema Registry ensures producer–consumer compatibility
 
-Consumer uses specific.avro.reader=true
+Consumer is configured with specific.avro.reader=true
