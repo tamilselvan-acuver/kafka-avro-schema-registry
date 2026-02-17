@@ -6,30 +6,6 @@ It focuses on schema-based message serialization to ensure data consistency betw
 
 ---
 
-## Tech Stack
-
-- Java 21
-- Spring Boot
-- Apache Kafka
-- Apache Avro
-- Confluent Schema Registry
-- Docker & Docker Compose
-- Maven
-
----
-
-## Project Structure
-
-kafka-avro-schema-registry
-│
-├── avro-producer # Kafka producer application
-├── avro-consumer # Kafka consumer application
-├── docker-compose.yml # Kafka, Zookeeper, Schema Registry setup
-└── README.md
-
-
----
-
 ## Avro & Schema Registry
 
 - Defined Avro schema for `OrderCreatedEvent`
