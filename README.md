@@ -33,19 +33,6 @@ It focuses on schema-based message serialization to ensure compatibility between
 
 ---
 
-## How to Run
-
- Start Kafka & Schema Registry
-
-- docker-compose up -d
-- Run Producer
-- cd avro-producer
-- mvn spring-boot:run
-- Run Consumer
-- cd avro-consumer
-- mvn spring-boot:run
-
----
 
 ### APIs
 Producer API
