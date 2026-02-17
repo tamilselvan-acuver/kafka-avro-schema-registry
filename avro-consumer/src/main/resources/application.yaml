@@ -1,0 +1,23 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: avro-consumer
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    consumer:
+      group-id: order-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+
+      properties:
+        schema.registry.url: http://localhost:8081
+        specific.avro.reader: true
+        spring.json.trusted.packages: "*"
+
+topic:
+  order-created: order.created
